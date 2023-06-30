@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>What you need to do?</h3>
+
+            <ul>
+                <li>Show Table of items with id 2 and 3.</li>
+            </ul>
+
+            <table  cellspacing="50" style="border-collapse: collapse; border: 1px solid black;">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Data1</th>
+                    <th>Data2</th>
+                    <th>Data3</th>
+                    <th>Data4</th>
+                    <th>OtherTypeValue (ID)</th>
+                    <th>OtherTypeValue (Title)</th>
+                </tr>
+
+                @foreach (var item in ViewBag.Info)
+                {
+                    @*<div>@item.Data1</div>*@
+
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.Title</td>
+                        <td>@item.Data1</td>
+                        <td>@item.Data2</td>
+                        <td>@item.Data3</td>
+                        <td>@item.Data4</td>
+                        <td>@item.OtherTypeValue.ID</td>
+                        <td>@item.OtherTypeValue.Title</td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
